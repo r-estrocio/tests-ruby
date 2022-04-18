@@ -1,3 +1,4 @@
+# First try
 # def translate(text)
 #   return text + "ay" if ["a", "e", "i", "o", "u"].include?(text[0])
 #   if !["a", "e", "i", "o", "u"].include?(text[0]) && !["a", "e", "i", "o", "u"].include?(text[1])
@@ -7,14 +8,14 @@
 #   return text.reverse + "ay" if !["a", "e", "i", "o", "u"].include?(text[0])
 # end
 #
-# A try
+# Another try
 # def translate(text)
 #   first_part = text.gsub(/[aeiou].*/, "")
 #   second_part = text[first_part.size..]
 #   return second_part + first_part + "ay"
 # end
 #
-# Alexis
+# Alexis - the final try
 # def translate (phrase)
 #   vowels = %w{a e i o u}
 #   phrase.gsub(/(\A|\s)\w+/) do |word|

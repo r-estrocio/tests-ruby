@@ -13,7 +13,6 @@ def array_42(array)
   return array.include?(42)
 end
 
-
 def magic_array(array)
   return array.flatten.sort.map { |n| n * 2 }.reject { |n| n % 3 == 0 }.uniq
 end
