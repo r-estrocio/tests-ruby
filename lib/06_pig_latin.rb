@@ -8,14 +8,14 @@
 #   return text.reverse + "ay" if !["a", "e", "i", "o", "u"].include?(text[0])
 # end
 #
-# Another try
-# def translate(text)
-#   first_part = text.gsub(/[aeiou].*/, "")
-#   second_part = text[first_part.size..]
+# Second try
+# def translate_word(word)
+#   first_part = word.gsub(/[aeiou].*/, "")
+#   second_part = word[first_part.size..]
 #   return second_part + first_part + "ay"
 # end
-#
-# Alexis - the final try
+
+# Alexis try (it works!)
 # def translate (phrase)
 #   vowels = %w{a e i o u}
 #   phrase.gsub(/(\A|\s)\w+/) do |word|
@@ -28,6 +28,21 @@
 #   end.strip
 # end
 
-def translate(text)
+# Trying a lot in irb...uf
+# But my final try (and it works too!!!)
+def translate_word(word)
   first_part = ""
+  word.each_char.each_with_index do |char, index|
+    break if char == "u" && (index == 0 || word[index-1] != "q")
+    break if ["a", "e", "i", "o"].include?(char)
+    first_part << char
+  end
+  second_part = word[first_part.size..]
+  return second_part + first_part + "ay"
+end
+
+def translate(text)
+  words = text.split()
+  translated_words = words.map { |w| translate_word(w) }
+  return translated_words.join(" ")
 end
