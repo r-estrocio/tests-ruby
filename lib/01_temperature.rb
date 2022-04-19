@@ -3,5 +3,5 @@ def ftoc(celsius)
 end
 
 def ctof(fahrenheit)
-  return fahrenheit / (5.0 / 9) + 32
+  return (fahrenheit / (5.0 / 9) + 32
 end
